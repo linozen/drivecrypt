@@ -4,7 +4,7 @@ set -euo pipefail
 # Script needs to be run as root!
 if [ $EUID -ne 0 ]
     then
-        echo "This script must be run as root, try 'sudo ${0}' or login as root"
+        echo "you need to run me as root"
     exit 1
 fi
 
