@@ -151,11 +151,11 @@ encrypt_drive () {
     # cleans up the answer from the user and checks to see if the first letter is a 'y'
     if [ `echo ${confirmation} | cut -c1 | tr [:upper:] [:lower:]` == "y" ]
     then
-        sudo dd if=/dev/zero of=/dev/mapper/${mapperName} status=progress bs=4M
+        echo "use nwipe or dd to wipe the drive"
     fi
 
-    echo "Creating EXT4 file system"
-    sudo mkfs.ext4 /dev/mapper/${mapperName}
+    echo "Creating EXT2 file system (change if )"
+    sudo mkfs.ext2 /dev/mapper/${mapperName}
 
     sudo cryptsetup luksClose ${mapperName}
 
