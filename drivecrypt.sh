@@ -154,7 +154,7 @@ encrypt_drive () {
         echo "use nwipe or dd to wipe the drive"
     fi
 
-    echo "Creating EXT2 file system (change if )"
+    echo "Creating EXT2 file system (change in script if needed)"
     sudo mkfs.ext2 /dev/mapper/${mapperName}
 
     sudo cryptsetup luksClose ${mapperName}
